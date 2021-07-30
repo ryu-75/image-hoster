@@ -10,8 +10,7 @@
 
             body {
                 font-family: 'Lato', sans-serif;
-                width: 50%;
-                height: 100%;
+                width: 100%;
                 background-color: rgba(86, 132, 160, 1);
                 display: inline;
             }
@@ -27,6 +26,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                margin-top : 15px
                 
             }
 
@@ -52,31 +52,35 @@
                 justify-content: center;
             }
 
+            .image {
+                max-width: 500px;
+                display: inline;
+                margin-top : 15px;
+                margin-left: 12px;
+                border : 2mm ridge white;
+            }
+
+            .img-container {
+                display: flex;
+                justify-content: center;
+                
+            }
 
         </style>
     </head>
 <body>
     <div class="container">
         <h1 class="title">Image hoster</h1>
-        <form method="POST" action="uploads/" enctype="multipart/form-data">
+        <form method="POST" action="index.php" enctype="multipart/form-data">
             <div>
                 <fieldset>
-
-                        <label for="firstname">Firstname :
-                            <input type="text" id="firstname" name="firsname"><br />
-                        </label>
-
-                        <label for="lastname">Lastname : 
-                            <input type="text" id="lastname" name="lastname"><br />
-                        </label>
-
-                        <input type="file" name="image">
+                        <input type="file" name="image" required>
+                        <div class="button">
+                            <button type="submit">Envoyer</button>
+                        </div>
                 </fieldset>
             </div>    
         </form>
-        <div class="button">
-            <button type="submit">Envoyer</button>
-        </div>
     </div>
 </body>
 </html>
