@@ -135,11 +135,13 @@ if ($_FILES['image']['size'] <= 3000000) {
                     <fieldset>
                             <input type="file" name="image" required>
                             <div class="button">
-                                <button type="submit">Envoyer</button>
+                                <button type="submit">Send</button>
                             </div>
+                            <p>Supports format : JPEG, jpg, gif and png</p>
+                            <p>Maximum sizes 3Mo</p>
                             <?php
                                     if (isset($error) && $error == 1) {
-                                    echo "<p>Problème d'affichage</p>";
+                                    echo "<p>Incorrect format</p>";
                                     }
                             ?>
                     </fieldset>
