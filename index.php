@@ -125,7 +125,7 @@ if ($_FILES['image']['size'] <= 3000000) {
                         </div>
 
                         <div class="image-link">
-                            <input type="text" value="http://localhost/'.$address.'" />
+                            <input type="text" value="http://localhost/Hebergeur-image/'.$address.'" />
                         </div>';
                 }   
             ?>
