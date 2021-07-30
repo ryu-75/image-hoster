@@ -100,6 +100,15 @@ if ($_FILES['image']['size'] <= 6000000) {
 <body>
     <div class="container">
         <h1 class="title">Image hoster</h1>
+        <?php 
+
+            if (isset($error) && $error == 0) {
+
+                echo '<div class="img-container">
+                        <img class="image" src="'.$address.'" />
+                    </div>';
+                    }
+        ?>
         <form method="POST" action="index.php" enctype="multipart/form-data">
             <div>
                 <fieldset>
