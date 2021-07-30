@@ -1,3 +1,32 @@
+<?php
+if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
+
+    $error = 1;
+
+if ($_FILES['image']['size'] <= 6000000) {
+
+    $imageInfo = pathinfo($_FILES['image']['name']);
+    $imageExtension = $imageInfo['extension'];
+    $extensionArray = [
+        'png',
+        'gif',
+        'jpg',
+        'JPEG'
+    ];
+
+    if (in_array($imageExtension, $extensionArray)) {
+
+        $address = 'uploads/'.time().rand().'.'.$imageExtension;
+
+        move_uploaded_file($_FILES['image']['tmp_name'], $address);
+
+        $error = 0;
+
+        }
+    }
+} 
+?>  
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
