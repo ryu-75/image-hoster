@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width-viewport=width initial-scale=1.0">
+        <link href="./css">
         <title>Image hoster</title>
     </head>
 <body>
