@@ -3,7 +3,7 @@ if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
 
     $error = 1;
 
-if ($_FILES['image']['size'] <= 6000000) {
+if ($_FILES['image']['size'] <= 3000000) {
 
     $imageInfo = pathinfo($_FILES['image']['name']);
     $imageExtension = $imageInfo['extension'];
@@ -11,7 +11,7 @@ if ($_FILES['image']['size'] <= 6000000) {
         'png',
         'gif',
         'jpg',
-        'JPEG'
+        'jpeg   '
     ];
 
     if (in_array($imageExtension, $extensionArray)) {
@@ -90,35 +90,62 @@ if ($_FILES['image']['size'] <= 6000000) {
             }
 
             .img-container {
+                text-align: center;
+                
+            }
+
+            .image-link {
                 display: flex;
                 justify-content: center;
-                
+            }
+
+            p {
+                text-align: center;
+            }
+
+            @media screen and (max-width: 550px) {
+                .image {
+                    width: 300px
+                }
             }
 
         </style>
     </head>
 <body>
     <div class="container">
-        <h1 class="title">Image hoster</h1>
-        <?php 
+        <article>
+            <h1 class="title">Image hoster</h1>
 
-            if (isset($error) && $error == 0) {
+            <?php 
 
-                echo '<div class="img-container">
-                        <img class="image" src="'.$address.'" />
-                    </div>';
-                    }
-        ?>
-        <form method="POST" action="index.php" enctype="multipart/form-data">
-            <div>
-                <fieldset>
-                        <input type="file" name="image" required>
-                        <div class="button">
-                            <button type="submit">Envoyer</button>
+                if (isset($error) && $error == 0) {
+
+                    echo '<div class="img-container">
+                            <img class="image" src="'.$address.'" id="image" /><br />
                         </div>
-                </fieldset>
-            </div>    
-        </form>
+
+                        <div class="image-link">
+                            <input type="text" value="http://localhost/'.$address.'" />
+                        </div>';
+                }   
+            ?>
+
+            <form method="POST" action="index.php" enctype="multipart/form-data">
+                <div>
+                    <fieldset>
+                            <input type="file" name="image" required>
+                            <div class="button">
+                                <button type="submit">Envoyer</button>
+                            </div>
+                            <?php
+                                    if (isset($error) && $error == 1) {
+                                    echo "<p>Problème d'affichage</p>";
+                                    }
+                            ?>
+                    </fieldset>
+                </div>    
+            </form>
+        </article>
     </div>
 </body>
 </html>
