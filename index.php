@@ -6,9 +6,21 @@
         <title>Image hoster</title>
     </head>
 <body>
-    <h1>Image Hoster</h1>
-    <section>
-        
-    </section>
+    <h1>Image hoster</h1>
+    <form method="POST" action="uploads/" enctype="multipart/form-data">
+        <fieldset>
+            <legend>Your form</legend>
+
+                <label for="firstname">Prénom :
+                    <input type="text" id="firstname" name="firsname"><br />
+                </label>
+
+                <label for="lastname">Nom : 
+                    <input type="text" id="lastname" name="lastname"><br />
+                </label>
+
+                <input type="file" name="image">
+        </fieldset>
+    </form>
 </body>
 </html>
