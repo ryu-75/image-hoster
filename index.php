@@ -3,25 +3,80 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width-viewport=width initial-scale=1.0">
-        <link href="./css">
+        <link href="./css/style.css">
         <title>Image hoster</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+            body {
+                font-family: 'Lato', sans-serif;
+                width: 50%;
+                height: 100%;
+                background-color: rgba(86, 132, 160, 1);
+                display: inline;
+            }
+
+            .title {
+                text-align: center;
+                text-decoration: underline;
+
+            }
+
+
+            form {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
+            }
+
+            fieldset {
+                border : 2mm ridge white;
+                border-radius: 10px;
+                color: black;
+                background-color: white;
+                box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.33)
+            }
+
+            input {
+                display: flex;
+                justify-content: center;
+            }
+
+            input, .button {
+                margin-top: 15px
+            }
+
+            .button {
+                display: flex;
+                justify-content: center;
+            }
+
+
+        </style>
     </head>
 <body>
-    <h1>Image hoster</h1>
-    <form method="POST" action="uploads/" enctype="multipart/form-data">
-        <fieldset>
-            <legend>Your form</legend>
+    <div class="container">
+        <h1 class="title">Image hoster</h1>
+        <form method="POST" action="uploads/" enctype="multipart/form-data">
+            <div>
+                <fieldset>
 
-                <label for="firstname">Prénom :
-                    <input type="text" id="firstname" name="firsname"><br />
-                </label>
+                        <label for="firstname">Firstname :
+                            <input type="text" id="firstname" name="firsname"><br />
+                        </label>
 
-                <label for="lastname">Nom : 
-                    <input type="text" id="lastname" name="lastname"><br />
-                </label>
+                        <label for="lastname">Lastname : 
+                            <input type="text" id="lastname" name="lastname"><br />
+                        </label>
 
-                <input type="file" name="image">
-        </fieldset>
-    </form>
+                        <input type="file" name="image">
+                </fieldset>
+            </div>    
+        </form>
+        <div class="button">
+            <button type="submit">Envoyer</button>
+        </div>
+    </div>
 </body>
 </html>
